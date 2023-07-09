@@ -28,13 +28,16 @@ int main() {
 
 	do
 	{
+		Dados d;
 		op = menu();
 		switch (op)
 		{
 		case 1: break;
-		case 2: break;
+		case 2: 
+			listardados(d);
+			break;
 		case 3:
-			printf("-----------------------------\n");
+			printf("\n-----------------------------\n");
 			printf("|       S U B M E N U       |\n");
 			printf("-----------------------------\n\n");
 			printf("[1] Por nome de elemento;\n");
