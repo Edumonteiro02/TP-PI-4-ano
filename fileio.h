@@ -1,11 +1,17 @@
+#ifndef FILEIO_H
+#define FILEIO_H
+
 #include <stdio.h>
-#include "utils.h"
+
+#define nos 5
 
 typedef struct
 {
-	char tipo;
+	char no_positivo, no_negativo, tipo;
 	char nome[50];
-	int no_positivo, no_negativo, valor;
-}*Dados [nos];
+	int valor;
+}Data;
 
-void Lerdados(Dados* dados);
+int Lerdados(Data *dados);
+
+#endif // FILEIO_H
