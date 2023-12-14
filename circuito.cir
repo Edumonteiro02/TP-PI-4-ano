@@ -1,7 +1,7 @@
 Circuito do trabalho prático
-V Fonte_1 1 0 24
-V Fonte_2 3 0 15
-R Resistencia_1 1 2 10000
-R Resistencia_2 2 3 8100
-R Resistencia_3 2 0 4700
-.END
+V Fonte_1 a b 24
+V Fonte_2 b c 15
+R Resistencia_1 c d 10000
+R Resistencia_2 d e 8100
+R Resistencia_3 e f 4700
+.end

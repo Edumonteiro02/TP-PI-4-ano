@@ -1,7 +1,10 @@
 #ifndef FILEIO_H
 #define FILEIO_H
-
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <locale.h>
 
 #define nos 5
 
@@ -12,6 +15,6 @@ typedef struct
 	int valor;
 }Data;
 
-int Lerdados(Data *dados);
+int Lerdados(Data *circuito);
 
 #endif // FILEIO_H

@@ -1,8 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include <stdio.h>
-#include <locale.h>
-#include "fileio.h"
 #include "utils.h"
 
 int menu()
@@ -26,10 +21,10 @@ int main(void)
 	setlocale(LC_ALL, "Portuguese");
 
 	int op, x;
-	Data circuito[nos];
+	Data *circuito[nos];
 	char nome[50];
 	char no1, no2;
-	x = Lerdados(&circuito);
+	x = Lerdados(circuito);
 	if (x==0)
 	{
 		return 0;
@@ -43,7 +38,7 @@ int main(void)
 				{
 				case 1: break;
 				case 2: 
-					listardados(&circuito);
+					listardados(circuito);
 					break;
 				case 3:
 					printf("\n-----------------------------\n");
@@ -59,14 +54,14 @@ int main(void)
 						case 1:
 							printf("Qual o nome do elemento?\n");
 							scanf("%s", nome);
-							//chamar função de procura por nome com argumentos nome e struct do circuito
+							procuranome(nome, circuito);
 							break;
 						case 2:
-							printf("1º no?");
-							scanf("%c", &no1);
-							printf("2º no?");
-							scanf("%c", &no2);
-							//chamar função de procura por nos com argumentos os 2 nos e struct do circuito
+							printf("1º no?\n");
+							scanf(" %c", &no1);
+							printf("2º no?\n");
+							scanf(" %c", &no2);
+							procurano(no1, no2, circuito);
 							break;
 						case 3:break;
 					}		
