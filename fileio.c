@@ -8,7 +8,7 @@ int Lerdados(Data *circuito)
 	char File_name[50];
 	int i = 0;
 	printf("Insira nome de ficheiro:");
-	scanf("%s", File_name);
+	scanf("%[^\n]", File_name);
 	FILE* fp;
 	fp = fopen(File_name, "r");
 	if (fp != NULL)

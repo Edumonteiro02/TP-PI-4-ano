@@ -25,8 +25,10 @@ int main(void)
 	char nome[50];
 	char no1, no2;
 	x = Lerdados(circuito);
-	if (x==0)
+	if (x == 0) 
+	{
 		return 0;
+	}	
 	else
 	{
 			do
@@ -51,13 +53,14 @@ int main(void)
 					{
 						case 1:
 							printf("Qual o nome do elemento?\n");
-							scanf("%s", nome);
+							scanf("%*c");
+							scanf("%[^\n]", nome);
 							procuranome(nome, circuito);
 							break;
 						case 2:
-							printf("1º no?\n");
+							printf("1º nó?\n");
 							scanf(" %c", &no1);
-							printf("2º no?\n");
+							printf("2º nó?\n");
 							scanf(" %c", &no2);
 							procurano(no1, no2, circuito);
 							break;
@@ -68,6 +71,5 @@ int main(void)
 
 			} while (op != 0);
 	}
-
 	return 0;
 }

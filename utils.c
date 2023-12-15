@@ -87,6 +87,6 @@ void procurano(char no1, char no2, Data *circuitos)
 
 	if (i == nos)
 	{
-		printf("Nao foi encontrado o no");
+		printf("Nao foi encontrado o no\n");
 	}
 }
