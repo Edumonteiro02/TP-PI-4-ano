@@ -26,9 +26,7 @@ int main(void)
 	char no1, no2;
 	x = Lerdados(circuito);
 	if (x==0)
-	{
 		return 0;
-	}
 	else
 	{
 			do
