@@ -77,10 +77,15 @@ int main(void)
 							procurano(no1, no2, circuito);
 							break;
 						case 3:break;
+						default:
+							printf("Opção Inválida\n");
+							break;
 					}		
 					break;
+				default:
+					printf("Opção Inválida\n");
+					break;
 				}
-
 			} while (op != 0);
 	}
 
