@@ -21,12 +21,24 @@ int main(void)
 	setlocale(LC_ALL, "Portuguese");
 
 	int op, x;
-	Data *circuito[nos];
+	Data* circuito[nos];
 	char nome[50];
 	char no1, no2;
+	for (int i = 0; i < nos; i++)
+	{
+		// Após cada chamada a malloc ou após cada leitura
+		printf("Alocando memória para o índice %d.\n", i);
+		circuito[i] = (Data*)malloc(sizeof(Data));
+	}
+
 	x = Lerdados(circuito);
 	if (x == 0) 
 	{
+		for (int i = 0; i < nos; i++) 
+		{
+			printf("Liberando memória para o índice %d.\n", i);
+			free(circuito[i]);
+		}
 		return 0;
 	}	
 	else
@@ -71,5 +83,17 @@ int main(void)
 
 			} while (op != 0);
 	}
+
+
+	for (int i = 0; i < nos; i++) 
+	{
+		// Antes de cada chamada a free
+		printf("Liberando memória para o índice %d.\n", i);
+		free(circuito[i]);
+	}
+
+	// Antes do retorno bem-sucedido no main
+	printf("Programa encerrado com sucesso.\n");
+
 	return 0;
 }

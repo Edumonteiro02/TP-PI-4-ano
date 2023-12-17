@@ -29,7 +29,7 @@ int Lerdados(Data *circuito)
 	}
 	else
 	{
-		printf("Erro ao abrir ficheiro"); 
+		printf("Erro ao abrir ficheiro\n"); 
 		return 0;
 	}
 	return 1;
