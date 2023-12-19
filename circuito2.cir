@@ -3,5 +3,5 @@ V Fonte_1 a b 24
 R Resistencia_1 c d 10000
 R Resistencia_2 d e 8100
 R Resistencia_3 e f 4700
-V Fonte_2 b c 15
 .end
+V Fonte_2 b c 15

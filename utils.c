@@ -1,5 +1,5 @@
 #include "utils.h"
-/*
+
 void ordenardados(Data* circuitos)
 {
 	Data temp;
@@ -13,7 +13,6 @@ void ordenardados(Data* circuitos)
 		}
 	}
 }
-*/
 
 
 void listardados(int op, Data *circuitos) 
@@ -29,6 +28,7 @@ void listardados(int op, Data *circuitos)
 		
 		for (i = 0; i < nos; i++) 
 		{	
+			//if(circuitos[i].nome != NULL) ver com circuito2.cir ultima linha ta a dar mal
 			printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
 		}
 		break;
@@ -39,7 +39,7 @@ void listardados(int op, Data *circuitos)
 		
 		for (i = 0; i < nos; i++)
 		{
-			if(circuitos[i].tipo=='V'|| circuitos[i].tipo == 'v')
+			if(circuitos[i].tipo =='V'|| circuitos[i].tipo == 'v')
 				printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
 		}
 		break;
