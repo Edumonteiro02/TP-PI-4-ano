@@ -1,17 +1,60 @@
 #include "utils.h"
+/*
+void ordenardados(Data* circuitos)
+{
+	Data temp;
+	for(int i = 0; i < nos; i++)
+	{
+		if(circuitos[i+1].tipo > circuitos[i].tipo)
+		{
+			temp = circuitos[i + 1];
+			circuitos[i + 1] = circuitos[i];
+			circuitos[i] = circuitos[i + 1];
+		}
+	}
+}
+*/
 
-void listardados(Data *circuitos) 
+
+void listardados(int op, Data *circuitos) 
 {
 	int i;
-
-	printf("\n----------------------------------\n");
-	printf("|           C I R C U I T         |\n");
-	printf("----------------------------------\n\n");
-
-		for (i = 0;i < nos;i++) 
-		{
+	//ordenardados(circuitos);
+	switch (op)
+	{
+	case 1 :
+		printf("\n----------------------------------\n");
+		printf("|           C I R C U I T        |\n");
+		printf("----------------------------------\n\n");
+		
+		for (i = 0; i < nos; i++) 
+		{	
 			printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
 		}
+		break;
+	case 2:
+		printf("\n----------------------------------\n");
+		printf("|           S O U R C E S        |\n");
+		printf("----------------------------------\n\n");
+		
+		for (i = 0; i < nos; i++)
+		{
+			if(circuitos[i].tipo=='V'|| circuitos[i].tipo == 'v')
+				printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
+		}
+		break;
+	case 3:
+		printf("\n----------------------------------------\n");
+		printf("|           R E S I S T O R S          |\n");
+		printf("----------------------------------------\n\n");
+		
+		for (i = 0; i < nos; i++)
+		{
+			if (circuitos[i].tipo == 'R' || circuitos[i].tipo == 'r')
+				printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
+		}
+		break;
+	}
 }
 
 void procuranome(char nome[50], Data *circuitos)
