@@ -1,0 +1,7 @@
+Circuito do trabalho prático
+V Fonte_2 a b 24
+V Fonte_1 b c 15
+R Resistencia_3 c d 10000
+R Resistencia_1 d e 8100
+R Resistencia_3 e f 4700
+.end

@@ -2,14 +2,82 @@
 
 void ordenardados(Data* circuitos)
 {
+	int i, j, x;
 	Data temp;
-	for(int i = 0; i < nos; i++)
+	char temp_c1, temp_c2;
+	char temp_name1[50], temp_name2[50];
+
+	for (i = 0; i < nos; i++)
 	{
-		if(circuitos[i+1].tipo > circuitos[i].tipo)
+		temp_c1 = circuitos[i].tipo;
+
+		if (temp_c1 > 64 && temp_c1 < 91)
+			temp_c1 = temp_c1 + 32;
+
+		for (j = i + 1; j < nos; j++)
 		{
-			temp = circuitos[i + 1];
-			circuitos[i + 1] = circuitos[i];
-			circuitos[i] = circuitos[i + 1];
+			temp_c2 = circuitos[j].tipo;
+
+			if (temp_c2 > 64 && temp_c2 < 91)
+				temp_c2 = temp_c2 + 32;
+
+			if (temp_c1 > temp_c2)
+			{
+				temp = circuitos[j];
+				circuitos[j] = circuitos[i];
+				circuitos[i] = temp;
+			}
+
+		}
+	}
+
+	for (i = 0; i < nos; i++)
+	{
+		temp_c1 = circuitos[i].tipo;
+		strcpy(temp_name1, circuitos[i].nome);
+
+		for (x = 0; temp_name1[x] != 0; x++)
+		{
+			if (temp_name1[x] > 64 && temp_name1[x] < 91)
+			{
+				temp_name1[x] = temp_name1[x] + 32;
+			}
+		}
+
+		if (temp_c1 > 64 && temp_c1 < 91)
+			temp_c1 = temp_c1 + 32;
+
+
+		for (j = i + 1; j < nos; j++)
+		{
+			temp_c2 = circuitos[j].tipo;
+			strcpy(temp_name2, circuitos[j].nome);
+
+			for (x = 0; temp_name2[x] != 0; x++)
+			{
+				if (temp_name2[x] > 64 && temp_name2[x] < 91)
+				{
+					temp_name2[x] = temp_name2[x] + 32;
+				}
+			}
+
+			if (temp_c2 > 64 && temp_c2 < 91)
+				temp_c2 = temp_c2 + 32;
+			if (temp_c1 == temp_c2)
+			{
+				if (strcmp(temp_name1, temp_name2) > 0)
+				{
+					temp = circuitos[j];
+					circuitos[j] = circuitos[i];
+					circuitos[i] = temp;
+				}
+				else if (strcmp(temp_name1, temp_name2) == 0 && circuitos[i].valor > circuitos[j].valor)
+				{
+					temp = circuitos[j];
+					circuitos[j] = circuitos[i];
+					circuitos[i] = temp;
+				}
+			}
 		}
 	}
 }
@@ -18,7 +86,7 @@ void ordenardados(Data* circuitos)
 void listardados(int op, Data *circuitos) 
 {
 	int i;
-	//ordenardados(circuitos);
+	ordenardados(circuitos);
 	switch (op)
 	{
 	case 1 :
