@@ -1,0 +1,10 @@
+Circuito do trabalho prático
+V Fonte_1 a b 10
+V Fonte_2 c f 15
+R Resistencia_1 c b 1
+R Resistencia_2 a d 10
+R Resistencia_3 d c 5
+R Resistencia_4 e f 7
+R Resistencia_5 a e 5
+R Resistencia_6 a c 6
+.end
