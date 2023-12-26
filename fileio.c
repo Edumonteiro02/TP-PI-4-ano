@@ -38,15 +38,15 @@ int Lerdados(Data *circuito)
 void outdados(float A1, float A2, float A3, float A4, float Ubc, float Uad, float Ucd, float Uef, float Uae, float Uac)
 {
 	FILE* fp;
-	fp = fopen("Resultados.out", "w+");
+	fp = fopen("Resultados.out", "w");
 	if (fp != NULL)
 	{
 		fprintf(fp, "Ubc=%f\n", Ubc);
-		fprintf(fp, "Uad%f\n", Uad);
-		fprintf(fp, "Ucd%f\n", Ucd);
-		fprintf(fp, "Uef%f\n", Uef);
-		fprintf(fp, "Uae%f\n", Uae);
-		fprintf(fp, "Uac%f\n", Uac);
+		fprintf(fp, "Uad=%f\n", Uad);
+		fprintf(fp, "Ucd=%f\n", Ucd);
+		fprintf(fp, "Uef=%f\n", Uef);
+		fprintf(fp, "Uae=%f\n", Uae);
+		fprintf(fp, "Uac=%f\n", Uac);
 		fprintf(fp, "A1=%f\n", A1);
 		fprintf(fp, "A2=%f\n", A2);
 		fprintf(fp, "A3=%f\n", A3);

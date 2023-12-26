@@ -109,8 +109,6 @@ int main(void)
 		free(circuito[i]);
 	}*/
 
-	// Antes do retorno bem-sucedido no main
-	printf("Programa encerrado com sucesso.\n");
 
 	return 0;
 }

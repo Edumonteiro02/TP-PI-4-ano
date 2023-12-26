@@ -5,28 +5,28 @@ void calculos(Data* circuito) {
 	float I1 = 0, I2 = 0, I3 = 0, Ubc = 0, Uad = 0, Ucd = 0, Uef = 0, Uae = 0, Uac = 0, A1 = 0, A2 = 0, A3 = 0, A4 = 0;
 	int x;
 	for (x = 0; x <= nos; x++) {
-		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'b') {
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'b' || circuito[x].no_positivo == 'b' && circuito[x].no_negativo == 'a') {
 			U1 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'f') {
+		if (circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'f' || circuito[x].no_positivo == 'f' && circuito[x].no_negativo == 'c') {
 			U2 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'b') {
+		if (circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'b' || circuito[x].no_positivo == 'b' && circuito[x].no_negativo == 'c') {
 			R1 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'd') {
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'd' || circuito[x].no_positivo == 'd' && circuito[x].no_negativo == 'a') {
 			R2 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'd' && circuito[x].no_negativo == 'c') {
+		if (circuito[x].no_positivo == 'd' && circuito[x].no_negativo == 'c' || circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'd') {
 			R3 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'e' && circuito[x].no_negativo == 'f') {
+		if (circuito[x].no_positivo == 'e' && circuito[x].no_negativo == 'f' || circuito[x].no_positivo == 'f' && circuito[x].no_negativo == 'e') {
 			R4 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'e') {
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'e' || circuito[x].no_positivo == 'e' && circuito[x].no_negativo == 'a') {
 			R5 = circuito[x].valor;
 		}
-		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'c') {
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'c' || circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'a') {
 			R6 = circuito[x].valor;
 		}
 	}
@@ -44,7 +44,7 @@ void calculos(Data* circuito) {
 	A3 = I3;
 	A4 = I1 - I2;
 
-	void outdados(A1, A2, A3, A4, Ubc, Uad, Ucd, Uef, Uae, Uac);
+	outdados(A1, A2, A3, A4, Ubc, Uad, Ucd, Uef, Uae, Uac);
 
 	printf("Valores das variáveis:\n");
 	printf("R1: %.2f\n", R1);
@@ -60,11 +60,11 @@ void calculos(Data* circuito) {
 	printf("I2=%f\n", I2);
 	printf("I3=%f\n", I3);
 	printf("Ubc=%f\n", Ubc);
-	printf("Uad%f\n", Uad);
-	printf("Ucd%f\n", Ucd);
-	printf("Uef%f\n", Uef);
-	printf("Uae%f\n", Uae);
-	printf("Uac%f\n", Uac);
+	printf("Uad=%f\n", Uad);
+	printf("Ucd=%f\n", Ucd);
+	printf("Uef=%f\n", Uef);
+	printf("Uae=%f\n", Uae);
+	printf("Uac=%f\n", Uac);
 	printf("A1=%f\n", A1);
 	printf("A2=%f\n", A2);
 	printf("A3=%f\n", A3);
