@@ -1,5 +1,77 @@
 #include "utils.h"
 
+void calculos(Data* circuito) {
+	float R1 = 0, R2 = 0, R3 = 0, R4 = 0, R5 = 0, R6 = 0, U1 = 0, U2 = 0;
+	float I1 = 0, I2 = 0, I3 = 0, Ubc = 0, Uad = 0, Ucd = 0, Uef = 0, Uae = 0, Uac = 0, A1 = 0, A2 = 0, A3 = 0, A4 = 0;
+	int x;
+	for (x = 0; x <= nos; x++) {
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'b') {
+			U1 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'f') {
+			U2 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'c' && circuito[x].no_negativo == 'b') {
+			R1 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'd') {
+			R2 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'd' && circuito[x].no_negativo == 'c') {
+			R3 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'e' && circuito[x].no_negativo == 'f') {
+			R4 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'e') {
+			R5 = circuito[x].valor;
+		}
+		if (circuito[x].no_positivo == 'a' && circuito[x].no_negativo == 'c') {
+			R6 = circuito[x].valor;
+		}
+	}
+	I2 = ((U2 + ((R3 * U1) / (R1 + R2 + R3)) + ((R2 * U1) / (R1 + R2 + R3)) + ((-R5 * U2) / (R4 + R5 + R6)) + ((-R4 * U2) / (R4 + R5 + R6))) / (((-R3 * R2) / (R1 + R2 + R3)) + ((-R3 * R3) / (R1 + R2 + R3)) + ((-R2 * R2) / (R1 + R2 + R3)) + ((-R2 * R3) / (R1 + R2 + R3)) + R3 + R2 + R5 + R4 + ((-R5 * R4) / (R4 + R5 + R6)) + ((-R5 * R5) / (R4 + R5 + R6)) + ((-R4 * R4) / (R4 + R5 + R6)) + ((-R4 * R5) / (R4 + R5 + R6))));
+	I1 = ((U1 + (R2 * I2) + (R3 * I2)) / (R1 + R2 + R3));
+	I3 = ((-U2 + (R4 * I2) + (R5 * I2)) / (R4 + R5 + R6));
+	Ubc = R1 * I1;
+	Uad = R2 * (I1 - I2);
+	Ucd = R3 * (I1 - I2);
+	Uef = R4 * (I2 - I3);
+	Uae = R5 * (I2 - I3);
+	Uac = R6 * I3;
+	A1 = I1;
+	A2 = I2 - I3;
+	A3 = I3;
+	A4 = I1 - I2;
+
+	void outdados(A1, A2, A3, A4, Ubc, Uad, Ucd, Uef, Uae, Uac);
+
+	printf("Valores das variáveis:\n");
+	printf("R1: %.2f\n", R1);
+	printf("R2: %.2f\n", R2);
+	printf("R3: %.2f\n", R3);
+	printf("R4: %.2f\n", R4);
+	printf("R5: %.2f\n", R5);
+	printf("R6: %.2f\n", R6);
+	printf("U1: %.2f\n", U1);
+	printf("U2: %.2f\n", U2);
+
+	printf("I1=%f\n", I1);
+	printf("I2=%f\n", I2);
+	printf("I3=%f\n", I3);
+	printf("Ubc=%f\n", Ubc);
+	printf("Uad%f\n", Uad);
+	printf("Ucd%f\n", Ucd);
+	printf("Uef%f\n", Uef);
+	printf("Uae%f\n", Uae);
+	printf("Uac%f\n", Uac);
+	printf("A1=%f\n", A1);
+	printf("A2=%f\n", A2);
+	printf("A3=%f\n", A3);
+	printf("A4=%f\n", A4);
+	system("pause");
+}
+
 void ordenardados(Data* circuitos)
 {
 	int i, j, x;

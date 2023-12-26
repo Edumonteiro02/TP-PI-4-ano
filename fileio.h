@@ -5,10 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
-#include <malloc.h>
-#include <time.h>
 
-#define nos 5
+#define nos 7
 
 typedef struct
 {
@@ -18,5 +16,6 @@ typedef struct
 }Data;
 
 int Lerdados(Data *circuito);
+void outdados(float A1, float A2, float A3, float A4, float Ubc, float Uad, float Ucd, float Uef, float Uae, float Uac);
 
 #endif // FILEIO_H

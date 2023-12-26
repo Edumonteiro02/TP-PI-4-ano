@@ -50,7 +50,9 @@ int main(void)
 				switch (op)
 				{
 				case 0: break;
-				case 1: break;
+				case 1: 
+					calculos(circuito);
+					break;
 				case 2:
 					printf("\n-----------------------------\n");
 					printf("|       S U B M E N U       |\n");
