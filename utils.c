@@ -69,7 +69,6 @@ void calculos(Data* circuito) {
 	printf("A2=%f\n", A2);
 	printf("A3=%f\n", A3);
 	printf("A4=%f\n", A4);
-	system("pause");
 }
 
 void ordenardados(Data* circuitos)
@@ -194,6 +193,9 @@ void listardados(int op, Data *circuitos)
 				printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
 		}
 		break;
+	default:
+		printf("Opção Inválida\n");
+		break;
 	}
 }
 
@@ -208,12 +210,6 @@ void procuranome(char nome[50], Data *circuitos)
 		{
 			nome[i] = nome[i] + 32;
 		}
-		/*
-		else if(nome[i] == 32) //secalhar colocar se o i+1 vai ser \0 porque ao colocar espaço depois do nº da erro de procura
-		{						//Prof não gostou disto xd as letras dão na mesma
-			nome[i] = 95;
-		}
-		*/
 	}
 
 	for (i = 0; i < nos; i++)

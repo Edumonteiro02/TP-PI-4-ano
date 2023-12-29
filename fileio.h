@@ -6,7 +6,7 @@
 #include <string.h>
 #include <locale.h>
 
-#define nos 7
+#define nos 8
 
 typedef struct
 {

@@ -9,6 +9,7 @@ int menu()
 	printf("[1] Calcular Correntes e Tensões;\n");
 	printf("[2] Listar Componentes;\n");
 	printf("[3] Procurar Componente;\n");
+	printf("[4] Ler ficheiro novamente;\n");
 	printf("[0] Sair\n\n");
 	printf("Opção:\n");
 	scanf("%d", &op);
@@ -24,22 +25,10 @@ int main(void)
 	Data circuito[nos];
 	char nome[50];
 	char no1, no2;
-	/*
-	for (int i = 0; i < nos; i++)
-	{
-		// Após cada chamada a malloc ou após cada leitura
-		printf("Alocando memória para o índice %d.\n", i);
-		circuito[i] = (Data*)malloc(sizeof(Data));
-	}*/
 
 	x = Lerdados(circuito);
 	if (x == 0) 
-	{/*
-		for (int i = 0; i < nos; i++) 
-		{
-			printf("Liberando memória para o índice %d.\n", i);
-			free(circuito[i]);
-		}*/
+	{
 		return 0;
 	}	
 	else
@@ -59,7 +48,8 @@ int main(void)
 					printf("-----------------------------\n\n");
 					printf("[1] Listar todos os elementos;\n");
 					printf("[2] Listar Fontes;\n");
-					printf("[3] Listar Resistências;\n\n");
+					printf("[3] Listar Resistências;\n");
+					printf("[0] Sair\n\n");
 					printf("Opção:\n");
 					scanf("%d", &op);
 					listardados(op, circuito);
@@ -70,11 +60,13 @@ int main(void)
 					printf("-----------------------------\n\n");
 					printf("[1] Por nome de elemento;\n");
 					printf("[2] Por nós do elemento;\n");
-					printf("[3] Voltar para tras;\n\n");
+					printf("[3] Voltar para tras;\n");
+					printf("[0] Sair\n\n");
 					printf("Opção:\n");
 					scanf("%d", &op);
 					switch (op)
 					{
+						case 0:break;
 						case 1:
 							printf("Qual o nome do elemento?\n");
 							scanf("%*c");
@@ -94,21 +86,23 @@ int main(void)
 							break;
 					}		
 					break;
+				case 4:
+					scanf("%*c");
+					x = Lerdados(circuito);
+					if(x == 0)
+					{
+						printf("Tente novamente\n");
+					}
+					else
+					{
+						printf("Novos dados foram lidos corretamente\n");
+					}
+					break;
 				default:
 					printf("Opção Inválida\n");
 					break;
 				}
 			} while (op != 0);
 	}
-
-	/*
-	for (int i = 0; i < nos; i++) 
-	{
-		// Antes de cada chamada a free
-		printf("Liberando memória para o índice %d.\n", i);
-		free(circuito[i]);
-	}*/
-
-
 	return 0;
 }

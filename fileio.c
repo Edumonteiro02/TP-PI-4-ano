@@ -1,5 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include "fileio.h"
 
 int Lerdados(Data *circuito)
@@ -16,8 +14,6 @@ int Lerdados(Data *circuito)
 		fscanf(fp, "%*[^\n]\n");
 		while (fgets(line, sizeof(line), fp) != NULL)
 		{
-			//printf("%s", line);
-			//printf("%d", i);
 			if (strcmp(line, ".END\0") == 0 || strcmp(line, ".end\0") == 0 || strcmp(line, ".END\n") == 0 || strcmp(line, ".end\n") == 0) //prof disse que podiamos ver pelo tamanho em conjunto
 				break;
 			else
