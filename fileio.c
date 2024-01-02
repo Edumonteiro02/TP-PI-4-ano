@@ -11,6 +11,14 @@ int Lerdados(Data *circuito)
 	fp = fopen(File_name, "r");
 	if (fp != NULL)
 	{
+		for (int j = 0; j < nos; ++j) 
+		{
+			circuito[j].no_positivo = 0;
+			circuito[j].no_negativo = 0;
+			circuito[j].tipo = 0;
+			circuito[j].nome[0] = '\0';
+			circuito[j].valor = 0;
+		}
 		fscanf(fp, "%*[^\n]\n");
 		while (fgets(line, sizeof(line), fp) != NULL)
 		{

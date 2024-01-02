@@ -49,9 +49,11 @@ int main(void)
 					printf("[1] Listar todos os elementos;\n");
 					printf("[2] Listar Fontes;\n");
 					printf("[3] Listar Resistências;\n");
+					printf("[4] Voltar para tras;\n");
 					printf("[0] Sair\n\n");
 					printf("Opção:\n");
 					scanf("%d", &op);
+					ordenardados(circuito); // só ordena por valor a partir da 2ª chamada
 					listardados(op, circuito);
 					break;
 				case 3:

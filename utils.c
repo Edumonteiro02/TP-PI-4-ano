@@ -157,7 +157,6 @@ void ordenardados(Data* circuitos)
 void listardados(int op, Data *circuitos) 
 {
 	int i;
-	ordenardados(circuitos);
 	switch (op)
 	{
 	case 1 :
@@ -167,8 +166,8 @@ void listardados(int op, Data *circuitos)
 		
 		for (i = 0; i < nos; i++) 
 		{	
-			//if(circuitos[i].nome != NULL) ver com circuito2.cir ultima linha ta a dar mal
-			printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
+			if (circuitos[i].tipo == 'V' || circuitos[i].tipo == 'v' || circuitos[i].tipo == 'R' || circuitos[i].tipo == 'r')
+				printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
 		}
 		break;
 	case 2:
@@ -193,6 +192,7 @@ void listardados(int op, Data *circuitos)
 				printf("<%c> <%s> <%d>\n", circuitos[i].tipo, circuitos[i].nome, circuitos[i].valor);
 		}
 		break;
+	case 4:break;
 	default:
 		printf("Opção Inválida\n");
 		break;
